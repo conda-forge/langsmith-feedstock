@@ -152,5 +152,6 @@ Feedstock Maintainers
 =====================
 
 * [@hinthornw](https://github.com/hinthornw/)
+* [@pavelzw](https://github.com/pavelzw/)
 * [@vowelparrot](https://github.com/vowelparrot/)
 
