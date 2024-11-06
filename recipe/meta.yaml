@@ -27,6 +27,7 @@ requirements:
     - requests >=2.0.0,<3.0.0
     - orjson >=3.9.14,<4.0.0
     - httpx >=0.23.0,<1
+    - requests-toolbelt >=1.0.0,<2
 
 test:
   imports:
