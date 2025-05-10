@@ -1,0 +1,66 @@
+schema_version: 1
+
+context:
+  name: langsmith
+  version: 0.2.11
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/langsmith-${{ version }}.tar.gz
+  sha256: edf070349dbfc63dc4fc30e22533a11d77768e99ef269399b221c48fee25c737
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - langsmith = langsmith.cli.main:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - poetry-core
+    - pip
+  run:
+    - python >=${{ python_min }},<4.0
+    - pydantic >=1,<3
+    - requests >=2.0.0,<3.0.0
+    - orjson >=3.9.14,<4.0.0
+    - httpx >=0.23.0,<1
+    - requests-toolbelt >=1.0.0,<2.0.0
+
+tests:
+  - python:
+      imports:
+        - langsmith
+        - langsmith.schemas
+        - langsmith.client
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+      - langsmith -h
+
+about:
+  summary: Client library to connect to the LangSmith language model tracing and evaluation API.
+  description: |
+    LangSmith helps you visualize and evaluate language model applications to help you build better
+    performing applications. This is the client library to connect to the LangSmith API.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://smith.langchain.com/
+  repository: https://github.com/langchain-ai/langchainplus-sdk
+  documentation: https://docs.smith.langchain.com/docs/
+
+extra:
+  recipe-maintainers:
+    - pavelzw
+    - hinthornw
+    - vowelparrot
