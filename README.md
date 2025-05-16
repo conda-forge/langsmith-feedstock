@@ -7,7 +7,7 @@ Home: https://smith.langchain.com/
 
 Package license: MIT
 
-Summary: Client library to connect to the LangSmith language model tracing and evaluation API.
+Summary: Client library to connect to the LangSmith LLM Tracing and Evaluation Platform.
 
 Development: https://github.com/langchain-ai/langchainplus-sdk
 
