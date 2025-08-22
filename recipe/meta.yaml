@@ -32,7 +32,7 @@ requirements:
     - packaging >=23.2
   run_constrained:
     - langsmith-pyo3 >=0.1.0rc2,<0.2.0
-    - rich >=13.9.4,<14.0.0
+    - rich >=13.9.4
     - pytest >=7.0.0
     - openai-agents >=0.0.3,<0.1
     - opentelemetry-sdk >=1.30.0,<2.0.0
