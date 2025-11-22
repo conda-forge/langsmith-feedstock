@@ -1,5 +1,5 @@
 {% set name = "langsmith" %}
-{% set version = "0.3.45" %}
+{% set version = "0.4.46" %}
 
 package:
   name: {{ name|lower }}
@@ -7,28 +7,26 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langsmith-{{ version }}.tar.gz
-  sha256: 1df3c6820c73ed210b2c7bc5cdb7bfa19ddc9126cd03fdf0da54e2e171e6094d
+  sha256: 0b73d47ebd0a27ea10edec1717f36f6a865cb9ffc7f4e6a419e2cea1ab3c5b1e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core
+    - hatchling
     - pip
   run:
     - python >={{ python_min }},<4.0
     - pydantic >=1,<3
-    # The following is only for py>=312, but we require it always to stay noarch
-    - pydantic >=2.7.4,<3.0.0
-    - requests >=2.0.0,<3.0.0
-    - orjson >=3.9.14,<4.0.0
+    - requests >=2.0.0
+    - orjson >=3.9.14
     - httpx >=0.23.0,<1
-    - requests-toolbelt >=1.0.0,<2.0.0
-    - zstandard >=0.23.0,<0.24.0
+    - requests-toolbelt >=1.0.0
+    - zstandard >=0.23.0
     - packaging >=23.2
   run_constrained:
     - langsmith-pyo3 >=0.1.0rc2,<0.2.0
