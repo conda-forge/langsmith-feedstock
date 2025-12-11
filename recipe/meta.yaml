@@ -1,5 +1,5 @@
 {% set name = "langsmith" %}
-{% set version = "0.4.46" %}
+{% set version = "0.4.59" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langsmith-{{ version }}.tar.gz
-  sha256: 0b73d47ebd0a27ea10edec1717f36f6a865cb9ffc7f4e6a419e2cea1ab3c5b1e
+  sha256: 6b143214c2303dafb29ab12dcd05ac50bdfc60dac01c6e0450e50cee1d2415e0
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - hatchling
     - pip
   run:
+    - uuid-utils >=0.12.0,<1.0
     - python >={{ python_min }},<4.0
     - pydantic >=1,<3
     - requests >=2.0.0
