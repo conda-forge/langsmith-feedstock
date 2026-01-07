@@ -1,5 +1,5 @@
 {% set name = "langsmith" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langsmith-{{ version }}.tar.gz
-  sha256: b60f1785aed4dac5e01f24db01aa18fa1af258bad4531e045e739438daa3f8c2
+  sha256: bf35f9ffa592d602d5b11d23890d51342f321ac7f5e0cb6a22ab48fbdb88853a
 
 build:
   noarch: python
