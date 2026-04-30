@@ -7,3 +7,5 @@ conda_forge_output_validation: true
 bot:
   automerge: true
   inspection: update-grayskull
+conda_install_tool: pixi
+conda_build_tool: rattler-build
