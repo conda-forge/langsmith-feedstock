@@ -1,28 +1,31 @@
-{% set name = "langsmith" %}
-{% set version = "0.7.38" %}
+schema_version: 1
+
+context:
+  name: langsmith
+  version: "0.7.38"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langsmith-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/langsmith-${{ version }}.tar.gz
   sha256: 0db529b768d66c45f22fe959a0af7151342704fefafdecf3c60b14097c14fdb1
 
 build:
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatchling
     - pip
   run:
     - python-xxhash >=3.0.0
     - uuid-utils >=0.12.0,<1.0
-    - python >={{ python_min }},<4.0
+    - python >=${{ python_min }},<4.0
     - pydantic >=2,<3
     - requests >=2.0.0
     - orjson >=3.9.14
@@ -30,7 +33,7 @@ requirements:
     - requests-toolbelt >=1.0.0
     - zstandard >=0.23.0
     - packaging >=23.2
-  run_constrained:
+  run_constraints:
     - langsmith-pyo3 >=0.1.0rc2,<0.2.0
     - rich >=13.9.4
     - pytest >=7.0.0
@@ -39,26 +42,23 @@ requirements:
     - opentelemetry-api >=1.30.0,<2.0.0
     - opentelemetry-exporter-otlp-proto-http >=1.30.0,<2.0.0
 
-test:
-  imports:
-    - langsmith
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - langsmith
+      pip_check: true
+      python_version: ${{ python_min }}
 
 about:
-  home: https://smith.langchain.com/
   summary: Client library to connect to the LangSmith LLM Tracing and Evaluation Platform.
   description: |
     LangSmith helps you visualize and evaluate language model applications to help you build better
     performing applications. This is the client library to connect to the LangSmith API.
   license: MIT
-  license_family: MIT
   license_file: LICENSE
-  doc_url: https://docs.smith.langchain.com/docs/
-  dev_url: https://github.com/langchain-ai/langchainplus-sdk
+  homepage: https://smith.langchain.com/
+  repository: https://github.com/langchain-ai/langchainplus-sdk
+  documentation: https://docs.smith.langchain.com/docs/
 
 extra:
   recipe-maintainers:
