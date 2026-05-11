@@ -58,7 +58,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   doc_url: https://docs.smith.langchain.com/docs/
-  dev_url: https://github.com/langchain-ai/langchainplus-sdk
+  dev_url: https://github.com/langchain-ai/langsmith-sdk
 
 extra:
   recipe-maintainers:
