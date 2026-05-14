@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: Client library to connect to the LangSmith LLM Tracing and Evaluation Platform.
 
-Development: https://github.com/langchain-ai/langchainplus-sdk
+Development: https://github.com/langchain-ai/langsmith-sdk
 
 Documentation: https://docs.smith.langchain.com/docs/
 
