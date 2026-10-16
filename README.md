@@ -16,7 +16,6 @@ Documentation: https://docs.smith.langchain.com/docs/
 LangSmith helps you visualize and evaluate language model applications to help you build better
 performing applications. This is the client library to connect to the LangSmith API.
 
-
 Current build status
 ====================
 
@@ -200,7 +199,4 @@ Feedstock Maintainers
 * [@jan-janssen](https://github.com/jan-janssen/)
 * [@pavelzw](https://github.com/pavelzw/)
 * [@vowelparrot](https://github.com/vowelparrot/)
-
-
-<!-- dummy commit to enable rerendering -->
 
