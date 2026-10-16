@@ -1,5 +1,5 @@
 {% set name = "langsmith" %}
-{% set version = "0.14.9" %}
+{% set version = "0.14.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/langsmith-{{ version }}.tar.gz
-  sha256: e54c41dcc06cbad971364fe5ecaaf976c11b418bdd0a125f816e2534c6caf2f2
+  sha256: d9e7ffe587e12ce51573cab654d02e84feb924d3b1f582274c4b1412ebeabf4c
 
 build:
   noarch: python
@@ -21,10 +21,10 @@ requirements:
     - pip
   run:
     - httpx2 >=2,<3
-    - anyio >=3.5.0
-    - distro >=1.7.0
-    - sniffio >=1.1
-    - typing_extensions >=4.0.0
+    - anyio >=3.5.0,<5
+    - distro >=1.7.0,<2
+    - sniffio
+    - typing_extensions >=4.14,<5
     - websockets >=15.0
     - python-xxhash >=3.0.0
     - uuid-utils >=0.12.0,<1.0
