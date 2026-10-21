@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: langsmith
-  version: "0.14.11"
+  version: 0.14.12
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/langsmith-${{ version }}.tar.gz
-  sha256: d9e7ffe587e12ce51573cab654d02e84feb924d3b1f582274c4b1412ebeabf4c
+  sha256: b4d6a24ed74333095da476803ad9d22ee35f9dae1052cebf1e366d3889a9b675
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -36,7 +36,6 @@ requirements:
     - pydantic >=2,<3
     - requests >=2.0.0
     - orjson >=3.9.14
-    - httpx >=0.23.0,<1
     - requests-toolbelt >=1.0.0
     - zstandard >=0.23.0
     - packaging >=23.2
@@ -56,7 +55,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
 
 about:
   summary: Client library to connect to the LangSmith LLM Tracing and Evaluation Platform.
