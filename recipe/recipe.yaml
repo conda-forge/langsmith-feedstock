@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: langsmith
-  version: "0.14.13"
+  version: "0.14.14"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/langsmith-${{ version }}.tar.gz
-  sha256: d8ff66381a5db2051546f1d15e7f0add87cc88fd771cb6fe238964418db394c4
+  sha256: fc28d1981656918f145d8d8089ed924dbf93d95e4959d0c1882cb5aec1563a0d
 
 build:
   number: 0
